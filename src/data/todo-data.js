@@ -8,52 +8,70 @@ class TodoData extends EventEmitter {
         super();
         this.todosList = Cookie.load('todos1');
 
-        console.log(this.todoslist);
-
-
-        if (this.todosList == null) {
+        if (this.todosList == null || this.todosList.lenght <= 0) {
             this.todosList = [
                 {
                     id: 1,
-                    name: 'Quarterly',
+                    name: 'Quarterly newsletter',
                     when: "Tomorrow",
                     statetodo: "Editorial"
                 },
                 {
                     id: 2,
-                    name: 'Recruiting',
+                    name: 'Recruiting blog post',
                     when: "Today",
-                    statetodo: "Q1 Goals"
+                    statetodo: "Q1Goals"
                 },
                 {
                     id: 3,
-                    name: 'Quarterly',
-                    when: "Tomorrow",
-                    statetodo: "Recruiting"
+                    name: 'Mobile app launch',
+                    when: "Today",
+                    statetodo: "Mobile"
                 },
                 {
                     id: 4,
-                    name: 'Quarterly',
-                    when: "Tomorrow",
-                    statetodo: "Editorial"
+                    name: 'Interview John H.',
+                    when: "Today",
+                    statetodo: "Recruiting"
+                },
+                {
+                    id: 5,
+                    name: 'Submit update to mobile storefronts',
+                    when: "Today",
+                    statetodo: "Mobile"
+                },
+                {
+                    id: 6,
+                    name: 'Schedule meeting with Alex',
+                    when: "Yesterday",
+                    statetodo: "WebSite"
+                },
+                {
+                    id: 7,
+                    name: 'Homepage refresh',
+                    when: "Yesterday",
+                    statetodo: "Sales"
                 }
             ];
-
-            console.log(this.todosList);
-
+            
             this.savetodos();
         }
     }
 
-    savetodos() {
+    savetodos() {        
         Cookie.save('todos1', this.todosList, { path: '/' });
+        console.log("Save todos", this.todosList);
     }
 
     create(todo) {
-        todo.id = Date.now();
+        todo.id = this.todosList.length + 10;
+        console.log("create todo", todo);
+        console.log("create todo list", this.todosList);
+
         //Spread Operator in React {...}
         this.todosList = [todo, ...this.todosList];
         this.savetodos();
+        
         this.emit("change");
     }
 
@@ -70,8 +88,7 @@ class TodoData extends EventEmitter {
     }
 
     getAll() {
-        console.log(this.todosList);
-
+        console.log("Get all", this.todosList);
         return this.todosList;
     }
 

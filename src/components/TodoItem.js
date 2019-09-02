@@ -7,7 +7,7 @@ class TodoList extends React.Component {
             <div key={this.props.item.id}>
                 <div key={this.props.item.id} className="row">
                     <div className="col-6">
-                        <a className="nav-link" href="#" onClick={this.props.select(this.props.item.id)}>{this.props.item.name}</a>
+                        <a className="nav-link" href="#" onClick={() => this.props.select(this.props.item.id)}>{this.props.item.name}</a>
                     </div>
                     <div className="col-2">
                         <button type="button" className="btn btn-primary">{this.props.item.statetodo}</button>

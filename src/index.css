@@ -5,9 +5,78 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e0dcdc;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.btn-rounded {
+  border-radius: 100px;
+}
+
+.when-todo {
+  color: aqua;
+  margin-top: 6px;
+}
+
+.cont-ppal{
+  background-color: white;
+  width: 65%;
+  padding: 0;
+}
+
+hr.hrShadow {
+	height: 10px;
+	border: 0;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+
+.title{
+  background-color: white;
+  text-align: center;
+  padding: 10px;
+  border-bottom: 90px;
+  margin-bottom: 30px;
+}
+
+.text-right{
+  text-align: right;
+}
+
+.text-left{
+  text-align: left;
+}
+
+.col{
+  padding: 0;
+}
+
+.todo-admin{
+  padding: 40px 10px 30px 10px;
+}
+
+img.head {
+  border-radius: 50%;
+}
+
+div.inRow {
+   display:inline;
+}
+
+hr.row{
+  margin-top: 0.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.fa-check-circle {
+  font-size: 25px;
+  opacity: 0.3;
+}
+
+.button-right{
+  float: right;
+  text-align: right;
 }
