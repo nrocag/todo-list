@@ -51,22 +51,22 @@ class TodoList extends React.Component {
                             console.log(item);
                             return (
                                 <div key={item.id}>
-                                    <div key={item.id} className="row">
-                                        <div className="col col-sm-1 text-right">
+                                    <div key={item.id} className="row d-flex align-items-center">
+                                        <div className="col col-sm-1 d-flex justify-content-end">
                                             <i className="far fa-check-circle" />
                                         </div>
-                                        <div className="col text-left">
+                                        <div className="col d-flex justify-content-start">
                                             <a className="nav-link" href="#" onClick={() => this.todoSelected(item.id)}>
                                                 {item.name}
                                             </a>
                                         </div>
-                                        <div className="col col-md-2 text-right">
+                                        <div className="col col-md-2">
                                             <button type="button"
                                                 className={this.getStyleButton(item.statetodo) + " btn-rounded btn-sm"}>
                                                 {item.statetodo}
                                             </button>
                                         </div>
-                                        <div className="col col-md-1 text-right when-todo">{item.when}</div>
+                                        <div className="col col-md-1 color-when">{item.when}</div>
                                         <div className="col col-md-1">
                                             <ModalTodoDelete executeAcepted={this.todoDelete.bind(this)} id={item.id}/>
                                         </div>

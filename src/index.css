@@ -17,9 +17,8 @@ code {
   border-radius: 100px;
 }
 
-.when-todo {
-  color: aqua;
-  margin-top: 6px;
+.color-when {
+  color: aqua;  
 }
 
 .cont-ppal{
@@ -40,14 +39,6 @@ hr.hrShadow {
   padding: 10px;
   border-bottom: 90px;
   margin-bottom: 30px;
-}
-
-.text-right{
-  text-align: right;
-}
-
-.text-left{
-  text-align: left;
 }
 
 .col{
