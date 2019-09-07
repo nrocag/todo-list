@@ -17,6 +17,8 @@ class TodoAdmin extends Component {
         } else {
             TodoActions.createTodo(this.state.Todo);
         }
+
+        this.clearTodo();
     }
 
     updateName = (e) => {
@@ -27,9 +29,7 @@ class TodoAdmin extends Component {
 
     clearTodo = () =>{
         console.log("Clear todo");
-        const todoClean = this.state.Todo;
-        todoClean.name = '';
-        todoClean.id = -1;
+        const todoClean = TodoData.getNew();
         this.setState({ Todo: todoClean });
     }
 

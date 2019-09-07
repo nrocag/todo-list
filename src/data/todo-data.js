@@ -63,6 +63,18 @@ class TodoData extends EventEmitter {
         console.log("Save todos", this.todosList);
     }
 
+    getNew()
+    {
+        let todo = {
+            id: -1,
+            name: '',
+            when: "Tomorrow",
+            statetodo: "Editorial"
+        }
+
+        return todo;
+    }
+
     create(todo) {
         todo.id = this.todosList.length + 10;
         console.log("create todo", todo);
